@@ -1,0 +1,9 @@
+include AUTHORS
+include LICENSE
+include DESCRIPTION
+include CHANGELOG.txt
+include README.md
+graft roadmap 
+global-exclude *.orig *.pyc *.log
+prune roadmap/tests/coverage
+prune roadmap/.ropeproject

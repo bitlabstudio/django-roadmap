@@ -1,0 +1,161 @@
+[
+    {
+        "pk": 1, 
+        "model": "roadmap.milestone", 
+        "fields": {
+            "start_date": "2013-01-28"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "roadmap.milestone", 
+        "fields": {
+            "start_date": "2013-03-01"
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "roadmap.milestonetranslation", 
+        "fields": {
+            "name": "Milestone 1", 
+            "language": "en", 
+            "milestone": 1
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "roadmap.milestonetranslation", 
+        "fields": {
+            "name": "\u91cc\u7a0b\u7891 1", 
+            "language": "zh", 
+            "milestone": 1
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "roadmap.milestonetranslation", 
+        "fields": {
+            "name": "Milestone 2", 
+            "language": "en", 
+            "milestone": 2
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "roadmap.milestonetranslation", 
+        "fields": {
+            "name": "\u91cc\u7a0b\u7891 2", 
+            "language": "zh", 
+            "milestone": 2
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "roadmap.event", 
+        "fields": {
+            "start_date": "2013-01-28", 
+            "milestone": 2
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "roadmap.event", 
+        "fields": {
+            "start_date": "2013-01-28", 
+            "milestone": 1
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "roadmap.event", 
+        "fields": {
+            "start_date": "2013-02-01", 
+            "milestone": 1
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "roadmap.event", 
+        "fields": {
+            "start_date": "2013-02-09", 
+            "milestone": 2
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "roadmap.eventtranslation", 
+        "fields": {
+            "start_date_text": "<strong>Q2</strong> 2013", 
+            "description": "Lorem ipsum.", 
+            "event": 2, 
+            "language": "en", 
+            "title": "Celebrate success"
+        }
+    }, 
+    {
+        "pk": 6, 
+        "model": "roadmap.eventtranslation", 
+        "fields": {
+            "start_date_text": "\u5f88\u5feb", 
+            "description": "Lorem\u5b58\u6709", 
+            "event": 3, 
+            "language": "zh", 
+            "title": "\u5947\u5999\u7684\u4e8b\u53d1\u751f\u4e86"
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "roadmap.eventtranslation", 
+        "fields": {
+            "start_date_text": "Very soon", 
+            "description": "Lorem ipsum.", 
+            "event": 3, 
+            "language": "en", 
+            "title": "Something happens"
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "roadmap.eventtranslation", 
+        "fields": {
+            "start_date_text": "<strong>Q1</strong> 2013", 
+            "description": "Lorem ipsum.", 
+            "event": 1, 
+            "language": "en", 
+            "title": "Implement website"
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "roadmap.eventtranslation", 
+        "fields": {
+            "start_date_text": "<strong>\u56db\u5206\u4f4d\u65702</strong> 2013", 
+            "description": "Lorem\u5b58\u6709", 
+            "event": 2, 
+            "language": "zh", 
+            "title": "\u5e86\u795d\u6210\u529f"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "roadmap.eventtranslation", 
+        "fields": {
+            "start_date_text": "<strong>\u56db\u5206\u4f4d\u65701</strong> 2013", 
+            "description": "Lorem\u5b58\u6709", 
+            "event": 1, 
+            "language": "zh", 
+            "title": "\u5b9e\u65bd\u7f51\u7ad9"
+        }
+    }, 
+    {
+        "pk": 7, 
+        "model": "roadmap.eventtranslation", 
+        "fields": {
+            "start_date_text": "Soon", 
+            "description": "", 
+            "event": 4, 
+            "language": "en", 
+            "title": "Event without translation"
+        }
+    }
+]
