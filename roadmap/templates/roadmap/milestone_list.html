@@ -12,8 +12,8 @@
             {% for event in milestone.events.all %}
                 <tr>
                     {% with event|get_preferred_translation_from_request:request as event_trans %}
-                    <td>{{ event_trans.start_date_text|safe }}</td>
-                    <td>{{ event_trans.title|safe }}</td>
+                        <td>{{ event_trans.start_date_text|safe }}</td>
+                        <td>{{ event_trans.title|safe }}</td>
                     {% endwith %}
                 </tr>
             {% endfor %}

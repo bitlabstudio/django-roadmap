@@ -21,3 +21,4 @@ coverage
 django-coverage
 ipython
 ipdb
+flake8

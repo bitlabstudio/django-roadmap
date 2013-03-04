@@ -6,4 +6,3 @@ from .models import Milestone
 
 class RoadmapView(ListView):
     model = Milestone
-    queryset = Milestone.objects.all()
