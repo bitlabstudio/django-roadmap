@@ -1,13 +1,12 @@
 """Models for the ``roadmap`` app."""
 from django.conf import settings
 from django.db import models
-from django.utils.translation import get_language
 from django.utils.translation import ugettext_lazy as _
 
-from simple_translation.utils import get_preferred_translation_from_lang
+from hvad.models import TranslatableModel, TranslatedFields
 
 
-class Milestone(models.Model):
+class Milestone(TranslatableModel):
     """
     A Milestone groups several events on the roadmap.
 
@@ -21,15 +20,21 @@ class Milestone(models.Model):
 
     start_date = models.DateField()
 
+    translations = TranslatedFields(
+        name=models.CharField(
+            max_length=1024,
+            verbose_name=_('Name'),
+        )
+    )
+
     def __unicode__(self):
         return self.get_name()
 
     def get_name(self):
-        lang = get_language()
-        return get_preferred_translation_from_lang(self, lang).name
+        return self.safe_translation_getter('name', 'Untranslated milestone')
 
 
-class MilestoneTranslation(models.Model):
+class MilestoneTranslationRenamed(models.Model):
     """
     Translateable fields of a ``Milestone``.
 
@@ -51,7 +56,7 @@ class MilestoneTranslation(models.Model):
     )
 
 
-class Event(models.Model):
+class Event(TranslatableModel):
     """
     An event belongs to a milestone.
 
@@ -65,16 +70,33 @@ class Event(models.Model):
 
     milestone = models.ForeignKey(
         Milestone,
+        verbose_name=_('Milestone'),
         related_name='events',
     )
-    start_date = models.DateField()
+    start_date = models.DateField(verbose_name=_('Start date'))
 
-    def get_translation(self):
-        lang = get_language()
-        return get_preferred_translation_from_lang(self, lang)
+    translations = TranslatedFields(
+        start_date_text=models.CharField(
+            max_length=1024,
+            verbose_name=_('Start date text'),
+        ),
+        title=models.CharField(
+            max_length=1024,
+            verbose_name=_('Title'),
+        ),
+        description=models.TextField(
+            verbose_name=_('Description'),
+            blank=True,
+        )
+    )
+
+    def __unicode__(self):
+        return self.safe_translation_getter(
+            'title',
+            'Event of {0}'.format(self.milestone))
 
 
-class EventTranslation(models.Model):
+class EventTranslationRenamed(models.Model):
     """
     Translateable fields of an ``Event``.
 
