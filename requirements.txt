@@ -5,8 +5,13 @@
 # ===========================================================================
 django==1.4.3
 django-cms==2.3.5
-simple-translation==0.8.6
-South==0.7.6
+django-mptt==0.5.2
+django-sekizai==0.6.1
+-e git+git://github.com/mbrochh/simple-translation.git@91c98e0cb1a4150f0460855dea869ddd75aaf25e#egg=simple_translation
+South==0.8.1
+Pillow==1.7.8
+easy-thumbnails==1.1
+django-filer==0.9.3
 
 
 # ==============================================================

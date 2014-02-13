@@ -1,6 +1,8 @@
 """Settings that need to be set in order to run the tests."""
 import os
 
+gettext = lambda s: s
+
 DEBUG = True
 FILER_DEBUG = True
 
@@ -13,9 +15,14 @@ DATABASES = {
     }
 }
 
+LANGUAGES = [
+    ('en', gettext('English')),
+    ('de', gettext('German')),
+]
+
 USE_I18N = True
 
-ROOT_URLCONF = 'roadmap.tests.urls'
+ROOT_URLCONF = 'roadmap.tests.test_app.urls'
 
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
