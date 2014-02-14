@@ -1,32 +1,26 @@
 """Admin classes for the ``roadmap`` app."""
 from django.contrib import admin
-from django.utils.translation import get_language
 from django.utils.translation import ugettext_lazy as _
 
-from simple_translation.admin import TranslationAdmin
-from simple_translation.utils import get_preferred_translation_from_lang
+from hvad.admin import TranslatableAdmin
 
 from .models import Event, Milestone
 
 
-class EventAdmin(TranslationAdmin):
-    list_display = ['title', 'languages', ]
+class EventAdmin(TranslatableAdmin):
+    list_display = ['get_title', 'all_translations', ]
 
-    def title(self, obj):
-        lang = get_language()
-        trans = get_preferred_translation_from_lang(obj, lang)
-        return trans.title
-    title.short_description = _('Title')
+    def get_title(self, obj):
+        return obj.title
+    get_title.short_description = _('Title')
 
 
-class MilestoneAdmin(TranslationAdmin):
-    list_display = ['name', 'languages', ]
+class MilestoneAdmin(TranslatableAdmin):
+    list_display = ['get_name', 'all_translations', ]
 
-    def name(self, obj):
-        lang = get_language()
-        trans = get_preferred_translation_from_lang(obj, lang)
-        return trans.name
-    name.short_description = _('Name')
+    def get_name(self, obj):
+        return obj.name
+    get_name.short_description = _('Name')
 
 
 admin.site.register(Event, EventAdmin)
