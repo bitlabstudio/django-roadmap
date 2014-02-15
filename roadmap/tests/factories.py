@@ -2,52 +2,21 @@
 from django.utils.timezone import now
 
 import factory
+from django_libs.tests.factories import HvadFactoryMixin
 
-from ..models import Event, EventTranslation, Milestone, MilestoneTranslation
+from ..models import Event, Milestone
 
 
-class MilestoneFactory(factory.Factory):
+class MilestoneFactory(HvadFactoryMixin, factory.DjangoModelFactory):
     FACTORY_FOR = Milestone
 
     start_date = factory.LazyAttribute(lambda x: now())
+    name = factory.Sequence(lambda n: 'name {0}'.format(n))
 
 
-class MilestoneTranslationFactoryBase(factory.Factory):
-    FACTORY_FOR = MilestoneTranslation
-
-    milestone = factory.SubFactory(MilestoneFactory)
-
-
-class MilestoneTranslationENFactory(MilestoneTranslationFactoryBase):
-    name = 'A Milestone'
-    language = 'en'
-
-
-class MilestoneTranslationDEFactory(MilestoneTranslationFactoryBase):
-    name = 'Ein Meilenstein'
-    language = 'de'
-
-
-class EventFactory(factory.Factory):
+class EventFactory(HvadFactoryMixin, factory.DjangoModelFactory):
     FACTORY_FOR = Event
 
     milestone = factory.SubFactory(MilestoneFactory)
     start_date = factory.LazyAttribute(lambda x: now())
-
-
-class EventTranslationFactoryBase(factory.Factory):
-    FACTORY_FOR = EventTranslation
-
-    event = factory.SubFactory(EventFactory)
-
-
-class EventTranslationENFactory(EventTranslationFactoryBase):
-    start_date_text = 'Very soon'
-    title = 'An event'
-    language = 'en'
-
-
-class EventTranslationDEFactory(EventTranslationFactoryBase):
-    start_date_text = 'Sehr bald'
-    title = 'Ein Event'
-    language = 'de'
+    title = factory.Sequence(lambda n: 'title {0}'.format(n))
