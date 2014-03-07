@@ -10,9 +10,8 @@ Installation
 Prerequisites:
 
 * Django
-* django-cms
-* simple-translation
-* TODO: Is that all?
+* django-cms 4 (beta)
+* django-hvad
 
 If you want to install the latest stable release from PyPi::
 
