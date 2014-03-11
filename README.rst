@@ -1,7 +1,7 @@
-Django Roadmap 
+Django Roadmap
 ==============
 
-TODO: Describe app
+A reusable Django app to store and display a set of goals for the future.
 
 
 Installation
@@ -10,7 +10,7 @@ Installation
 Prerequisites:
 
 * Django
-* django-cms 4 (beta)
+* django-cms (cms 3 tested)
 * django-hvad
 
 If you want to install the latest stable release from PyPi::

@@ -10,10 +10,6 @@ def read(fname):
         return ''
 
 
-dependency_links = [
-    'https://github.com/divio/django-cms/tarball/3a09d5c39b3469e64aeecc0205a193f5b70c2061',  # NOQA
-]
-
 setup(
     name="django-roadmap",
     version=roadmap.__version__,
@@ -31,7 +27,6 @@ setup(
         'django',
         'django-hvad',
     ],
-    dependency_links=dependency_links,
     tests_require=[
         'fabric',
         'factory_boy',
