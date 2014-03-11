@@ -1,6 +1,16 @@
-{% load sekizai_tags %}
-{% render_block "css" %}
-
-{% block main %}{% endblock %}
-
-{% render_block "js" %}
+{% load  cms_tags menu_tags sekizai_tags static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>testapp</title>
+    {% block extrahead %}{% endblock %}
+    {% render_block "css" %}
+</head>
+<body>
+    {% cms_toolbar %}
+    {% show_menu %}
+    {% placeholder base_content %}
+    {% block main %}{% endblock %}
+    {% render_block "js" %}
+</body>
+</html>
