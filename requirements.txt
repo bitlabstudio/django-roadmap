@@ -4,7 +4,7 @@
 # Packages essential to this app. Needed by anyone who wants to use this app.
 # ===========================================================================
 
-django==1.6.2
+django==1.11.23
 -e git+https://github.com/KristianOellegaard/django-hvad.git@0e2101f15404eaf9611cd6cf843bfc424117b227#egg=hvad
 South==0.8.4
 
